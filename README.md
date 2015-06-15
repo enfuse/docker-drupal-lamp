@@ -1,3 +1,5 @@
+Original code from Carlos Reig https://github.com/carlosreig/drupal7-docker
+
 # Drupal 7 docker
 A file structrure to have a full Drupal 7 installation in a docker container.
 
