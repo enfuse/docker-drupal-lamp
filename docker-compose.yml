@@ -1,11 +1,18 @@
-apache2-drupal:
+drupal-web:
   build: apache
   ports: 80:80
   volumes:
     - web:/var/www/html:rw
   links:
     - drupal-db
+    - drupal-mh
 
 drupal-db:
   build: mysql
   ports: 3306:3306
+
+drupal-mh:
+  build: mailhog
+  ports: 
+    - 1025:1025
+    - 8025:8025
