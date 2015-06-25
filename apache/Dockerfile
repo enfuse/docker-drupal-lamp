@@ -32,4 +32,4 @@ ADD templates/php.ini /usr/local/etc/php/
 RUN apt-get -yqq install ssmtp
 
 # Add ssmtp configuration file
-ADD config/ssmtp.conf /etc/ssmtp/ssmtp.conf
+ADD templates/ssmtp.conf /etc/ssmtp/ssmtp.conf
