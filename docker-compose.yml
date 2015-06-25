@@ -1,4 +1,4 @@
-drupal-web:
+apache2-drupal:
   build: apache
   ports: 80:80
   volumes:

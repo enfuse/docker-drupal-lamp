@@ -18,6 +18,8 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN composer global require drush/drush:7.x \
 	&& ln -s /root/.composer/vendor/bin/drush /usr/bin/drush
 
+RUN composer require "potsky/pimp-my-log" && mv vendor /var/www
+
 RUN docker-php-ext-install pdo pdo_mysql
 
 RUN a2enmod rewrite
@@ -25,3 +27,9 @@ RUN a2enmod rewrite
 ADD scripts/ /tmp/scripts
 ADD templates/apache2.conf /etc/apache2/
 ADD templates/php.ini /usr/local/etc/php/
+
+# Install ssmtp MTA
+RUN apt-get -yqq install ssmtp
+
+# Add ssmtp configuration file
+ADD config/ssmtp.conf /etc/ssmtp/ssmtp.conf
