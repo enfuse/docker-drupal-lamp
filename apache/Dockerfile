@@ -18,7 +18,7 @@ RUN curl -sS https://getcomposer.org/installer | php \
 RUN composer global require drush/drush:7.x \
 	&& ln -s /root/.composer/vendor/bin/drush /usr/bin/drush
 
-RUN composer require "potsky/pimp-my-log" && mv vendor /var/www
+RUN composer require "potsky/pimp-my-log" && mv vendor/potsky/pimp-my-log /var/www/html/pimpmylog
 
 RUN docker-php-ext-install pdo pdo_mysql
 
